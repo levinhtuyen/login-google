@@ -9,6 +9,9 @@
   "files": [
     "dist/*"
   ],
+  "engines": {
+    "yarn": "^1.22.17"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
