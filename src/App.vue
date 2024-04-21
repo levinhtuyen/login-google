@@ -1,9 +1,9 @@
 <script lang="ts">
-import type {
-  CallbackTypes
-} from "vue3-google-login";
-const callback: CallbackTypes.CodeResponseCallback = (response) => {
-  console.log("Authorisation code", response.code);
+import { CallbackTypes } from "./plugin";
+const callback: CallbackTypes.CredentialCallback = (response) => {
+  // This callback will be triggered when the user selects or login to
+  // his Google account from the popup
+  console.log("Credential JWT string", response.credential);
 };
 </script>
 
@@ -58,7 +58,7 @@ const callback: CallbackTypes.CodeResponseCallback = (response) => {
 
               Facebook
             </button>
-            <GoogleLogin :callback="callback">
+            <GoogleLogin :callback="callback" prompt auto-login>
               <button class=" border-none px-4 py-2 rounded-xl cursor-pointer text-whittransition duration-500 ease-in-out  transform hover:-translate-x hover:scale-105">
 
                 login Goole
